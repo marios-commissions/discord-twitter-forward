@@ -46,9 +46,9 @@ export default class Interval {
           },
           body: JSON.stringify({
             content: [
-              `**Translated with ${raw.confidence * 100}% confidence**`,
+              raw ? `**Translated with ${raw.confidence * 100}% confidence**` : 'Failed to translate due to ratelimit',
               '',
-              text,
+              text ?? tweet.full_text,
               `https://twitter.com/${tweet.user.screen_name}/status/${tweet.id_str}`
             ].join('\n')
           })
