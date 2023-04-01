@@ -1,5 +1,6 @@
 import translate from './actions/translate';
 import timeline from './actions/timeline';
+import webhook from './webhook';
 import client from './client';
 import moment from 'moment';
 
@@ -39,19 +40,13 @@ export default class Interval {
 
         const { text, raw } = await translate(tweet.full_text);
 
-        await fetch(client.config.webhook, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({
-            content: [
-              raw ? `**Translated with ${raw.confidence * 100}% confidence**` : 'Failed to translate due to ratelimit',
-              '',
-              text ?? tweet.full_text,
-              `https://twitter.com/${tweet.user.screen_name}/status/${tweet.id_str}`
-            ].join('\n')
-          })
+        client.webhook.send({
+          content: [
+            raw ? `**Translated with ${raw.confidence * 100}% confidence**` : 'Failed to translate due to ratelimit',
+            '',
+            text ?? tweet.full_text,
+            `https://twitter.com/${tweet.user.screen_name}/status/${tweet.id_str}`
+          ].join('\n')
         });
       }
 

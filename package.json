@@ -9,7 +9,8 @@
   "author": "eternal (eternal.git@gmail.com)",
   "license": "Unlicensed",
   "devDependencies": {
-    "@swc/core": "^1.3.35"
+    "@swc/core": "^1.3.35",
+    "discord-api-types": "^0.37.37"
   },
   "dependencies": {
     "@types/node": "^18.14.0",

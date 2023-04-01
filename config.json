@@ -1,10 +1,16 @@
 {
   "webhook": "https://canary.discord.com/api/webhooks/123/123",
-  "accounts": [],
+  "accounts": [
+    "username"
+  ],
   "delay": 10,
   "timeline": {
     "exclude_replies": true,
     "include_entities": true,
     "include_rts": true
+  },
+  "errors": {
+    "catch": true,
+    "webhook": "https://canary.discord.com/api/webhooks/123/123"
   }
 }

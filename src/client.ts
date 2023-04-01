@@ -3,9 +3,11 @@ import { TwitterApi } from 'twitter-api-v2';
 import { xauthLogin } from 'xauth-login';
 import config from '../config.json';
 import Interval from './interval';
+import Webhook from './webhook';
 
 class Client {
   public instance: InstanceType<typeof TwitterApi>;
+  public webhook: InstanceType<typeof Webhook>;
   public config = config;
   public started: Date;
 
@@ -24,6 +26,7 @@ class Client {
       accessSecret: oauth_token_secret
     });
 
+    this.webhook = new Webhook(config.webhook);
     this.started = new Date();
 
     new Interval();
