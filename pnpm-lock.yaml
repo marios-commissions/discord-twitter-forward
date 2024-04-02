@@ -14,8 +14,8 @@ dependencies:
     specifier: ^2.29.4
     version: 2.29.4
   twitter-api-v2:
-    specifier: github:localip/node-twitter-api-v2
-    version: github.com/localip/node-twitter-api-v2/d64347b776664e5fd45fe4afbfc6c30cb2b54d01
+    specifier: github:marioparaschiv/node-twitter-api-v2
+    version: github.com/marioparaschiv/node-twitter-api-v2/d64347b776664e5fd45fe4afbfc6c30cb2b54d01
   xauth-login:
     specifier: ^1.0.1
     version: 1.0.1
@@ -237,8 +237,8 @@ packages:
       - encoding
     dev: false
 
-  github.com/localip/node-twitter-api-v2/d64347b776664e5fd45fe4afbfc6c30cb2b54d01:
-    resolution: {tarball: https://codeload.github.com/localip/node-twitter-api-v2/tar.gz/d64347b776664e5fd45fe4afbfc6c30cb2b54d01}
+  github.com/marioparaschiv/node-twitter-api-v2/d64347b776664e5fd45fe4afbfc6c30cb2b54d01:
+    resolution: {tarball: https://codeload.github.com/marioparaschiv/node-twitter-api-v2/tar.gz/d64347b776664e5fd45fe4afbfc6c30cb2b54d01}
     name: twitter-api-v2
     version: 1.14.1
     dev: false
